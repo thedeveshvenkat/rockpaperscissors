@@ -1,19 +1,14 @@
 function getComputerChoice() {
     let num = Math.random();
 
-    if (num < 0.3333333333) {
+    if (num <= 1/3) {
         return "rock";
     }
 
-    if (num < 0.6666666666) {
+    if (num <= 2/3) {
         return "paper";
     }
-
-    if (num < 0.9999999999) {
-        return "scissors";
-    }
-
-    return;
+    return "scissors";
     // generate using Math.random
     // if the number < 0.33 -> rock
     // if the number < 0.66 -> paper
@@ -39,16 +34,16 @@ function getHumanChoice() {
 function playRound(computerSelection, humanSelection) {
     if (humanSelection === "rock") {
         if (computerSelection === "paper") {
-            console.log("You lose! Computer guessed paper!");
+            alert("You lose! Computer guessed paper!");
             computerScore++;
         }
 
         if (computerSelection === "rock") {
-            console.log("It's a tie! Computer guessed rock!");
+            alert("It's a tie! Computer guessed rock!");
         }
 
         if (computerSelection === "scissors") {
-            console.log("You win! Computer guessed scissors!");
+            alert("You win! Computer guessed scissors!");
             humanScore++;
         }
     }
@@ -56,16 +51,16 @@ function playRound(computerSelection, humanSelection) {
 
     if (humanSelection === "paper") {
         if (computerSelection === "paper") {
-            console.log("It's a tie! Computer guessed paper!");
+            alert("It's a tie! Computer guessed paper!");
         }
 
         if (computerSelection === "rock") {
-            console.log("You win! Computer guessed rock!");
+            alert("You win! Computer guessed rock!");
             humanScore++;
         }
 
         if (computerSelection === "scissors") {
-            console.log("You lose! Computer guessed scissors!");
+            alert("You lose! Computer guessed scissors!");
             computerScore++;
         }
     }
@@ -73,17 +68,17 @@ function playRound(computerSelection, humanSelection) {
 
     if (humanSelection === "scissors") {
         if (computerSelection === "paper") {
-            console.log("You win! Computer guessed paper!");
+            alert("You win! Computer guessed paper!");
             humanScore++;
         }
 
         if (computerSelection === "rock") {
-            console.log("You lose! Computer guessed rock!");
+            alert("You lose! Computer guessed rock!");
             computerScore++;
         }
 
         if (computerSelection === "scissors") {
-            console.log("It's a tie! Computer guessed scissors!");
+            alert("It's a tie! Computer guessed scissors!");
         }
     }
 
@@ -112,11 +107,11 @@ let humanSelection = 0;
 playGame();
 
 if (humanScore > computerScore) {
-    console.log(`You won with a score of ${humanScore} to ${computerScore}!!!!`);
+    alert(`You won with a score of ${humanScore} to ${computerScore}!!!!`);
 } else if (computerScore > humanScore) {
-    console.log(`You lost with a score of ${humanScore} to ${computerScore}!`);
+    alert(`You lost with a score of ${humanScore} to ${computerScore}!`);
 } else {
-    console.log(`It was a tie! ${humanScore} to ${computerScore}`);
+    alert(`It was a tie! ${humanScore} to ${computerScore}`);
 }
 
 
